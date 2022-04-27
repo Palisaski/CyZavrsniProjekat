@@ -1,3 +1,6 @@
+const user = Cypress.env('user')
+const agent = Cypress.env('agent')
+
 describe('First Test Suite', function() {
     beforeEach('Go to application', function(){
       cy.visit('/')
@@ -5,10 +8,8 @@ describe('First Test Suite', function() {
   
   it('Log in as a user', function(){
     cy.get(".theme-btn").contains("Login").click();
-    cy.get("input[placeholder='Email']").click({ force: true }).type('user@phptravels.com');
-    cy.get("input[placeholder='Password']").click({ force: true }).type('demouser');
+    cy.login(user);
     cy.get("button[type=submit]").contains("Login").click({ force: true });
-    
     }
-    
   )})
+  
