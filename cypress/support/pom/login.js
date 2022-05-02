@@ -1,6 +1,6 @@
 const login = {
-  email: "input[placeholder='Email']",
-  password: "input[placeholder='Password']",
-  loginBtn: "button[type=submit]"
+  username: 'input:first',
+  password: 'input:password',
 }
+
 export { login }
