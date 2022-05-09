@@ -6,14 +6,14 @@ describe('Onboarding Test Suite', function() {
       cy.visit('/')
   });
   
-  it.only('1. Log in as a user', function(){
+  it('1. Log in as a user', function(){
     cy.get('.theme-btn').contains('Login').click();
     cy.login(user); 
     cy.get('button[type=submit]').contains('Login').click({ force: true });
     });
   
 
-  it.only('2. Log in as an agent', function(){
+  it('2. Log in as an agent', function(){
     cy.get('.theme-btn').contains('Login').click();
     cy.login(agent);
     cy.get('button[type=submit]').contains('Login').click({ force: true });
