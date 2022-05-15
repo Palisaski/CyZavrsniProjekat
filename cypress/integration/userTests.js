@@ -1,4 +1,4 @@
-const agent = Cypress.env('agent')
+const user = Cypress.env('user')
 
 describe('Home page features', function() {
 
@@ -8,7 +8,7 @@ describe('Home page features', function() {
 
 it('1. Add Fund', function() {
   cy.get('.theme-btn').contains('Login').click();
-  cy.login(agent);
+  cy.login(user);
   cy.get('.sidebar-menu-wrap').contains('Add Funds').click();
   cy.get('#gateway_paypal').click()
   cy.get('input[name=price]').clear().type('100')
@@ -18,15 +18,18 @@ it('1. Add Fund', function() {
 
 it('2. Successfully Update Profile', function(){
   cy.get('.theme-btn').contains('Login').click()
-  cy.login(agent)
+  cy.login(user)
   cy.get('.sidebar-menu-wrap').contains('My Profile').click()
   cy.get('#select2-from_country-container').click().then( () => {
     cy.wait(1000)
     cy.get('.select2-search__field').type('Serbia', {force: true})
   cy.get('button[type=submit]').contains('Update Profile').click()
-  cy.get('.alert-success').should('have.text','Profile updated successfully.')
+  cy.get('.alert-success').should('have.text','\n Profile updated successfully.')
     
 })
+it('2. Successfully Update Profile', function(){
+  cy.get('.theme-btn').contains('Login').click()
+  cy.login(user)
   
 
 })})
