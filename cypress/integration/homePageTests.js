@@ -35,7 +35,7 @@ it('3. Search Flight', function (){
   cy.get('.sec__title_list').should('have.text','BEG  GIG')
 })
 
-it.only('4. Booking a Featured Hotel', function(){
+it('4. Booking a Featured Hotel', function(){
   cy.get('.hotel-card-wrap').contains('Oasis Beach Tower').click({force: true})
   cy.get('button[type=submit]').contains('Book').click({force : true})
   cy.get('input[name=firstname]').click({force: true}).type('Milica')

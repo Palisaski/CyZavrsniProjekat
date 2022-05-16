@@ -21,11 +21,11 @@ describe('Onboarding Test Suite', function() {
 
   it('3. Sign up', function(){
     cy.get('.theme-btn').contains('Signup').click()
-    cy.get('input[name=first_name]').type('Ja',{force: true})
-    cy.get('input[name=last_name]').type('Palisaski',{force: true})
-    cy.get('input[name=phone').type('223122',{force: true})
-    cy.get('input[name=email').type('032@gmail.com',{force: true})
-    cy.get('input[name=password').type('dsada',{force: true})
+    cy.get('input[name=first_name]').type('Jovana',{force: true})
+    cy.get('input[name=last_name]').type('Matic',{force: true})
+    cy.get('input[name=phone').type('200122',{force: true})
+    cy.get('input[name=email').type('0772@gmail.com',{force: true})
+    cy.get('input[name=password').type('dsa02a',{force: true})
     cy.get('button[type=submit]').contains('Signup').click({force: true})
     cy.get('.modal-title').should('have.text', 'LoginReset Password')   
     })
